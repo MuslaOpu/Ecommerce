@@ -12,13 +12,13 @@
 
 .logo {
     display: flex;
-    align-items: center;
-    column-gap: 8px;
+    justify-content: space-between;
 }
 
 .logo img {
     width: 1.5rem;
     height: 1.5rem;
+
     
 }
 
@@ -26,8 +26,8 @@
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary-color);
-    
 }
+
 
 .menu {
     display: flex;
@@ -45,7 +45,7 @@
  .nav_icons {
     display: flex;
     align-items: center;
-    column-gap: 1.2rem;
+    column-gap: 3rem;
  }
 
  .nav_icons span i {
@@ -54,13 +54,40 @@
     cursor: pointer;
  }
 
+ .cart_icon, .fav_icon {
+    position: relative;
+ }
+
+ .badge{
+    position: absolute;
+    top: 40px;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:last baseline;
+    font-size: .8rem;
+    font-weight: 600;
+    z-index: 100;
+ }
+
+ 
+
  .nav_icons span img {
     width: 30px;
     height: 30px;
+    cursor: pointer;
  }
 
  .mobile_menu{
     font-size: 1.3rem;
     color:var(--primary-color);
-  
+    display:none
+ }
+
+ .nav_active {
+    font-weight: 700 !important;
  }

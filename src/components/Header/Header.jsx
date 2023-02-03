@@ -2,56 +2,75 @@
 import React from 'react';
 import './Header.css'
 import { NavLink } from 'react-router-dom';
+import {motion} from 'framer-motion';
 
 import logo from '../../assets/images/eco-logo.png'
 import userIcon from '../../assets/images/user-icon.png'
 
-import { Container, Row } from 'reactstrap';
+import {Container,Row } from 'reactstrap';
+
+const nav_links = [
+    {
+        path: 'home',
+        display: 'Home'
+    },
+    {
+        path: 'shop',
+        display: 'Shop'
+    },
+    {
+        path: 'cart',
+        display: 'Cart'
+    },
+
+]
 
 const Header = () => {
     return <header className='header'>
-        <Container>
-            <Row>
-                <div className="nav_wrapper">
+      
+            <Container>
+                <Row>
+                    <div className="nav_wrapper">
 
-                    <div className="logo">
-                        <img src={logo} alt="" />
-                        <div>
-                            <h1>Multimart</h1>
-                            <p>Since 1995</p>
+                        <div className="logo">
+                            <img src={logo} alt="" />
+                            <div>
+                                <h1>Multimart</h1>
+                            </div>
+                        </div>
+
+                        <div className='navigation'>
+                            <ul className='menu'>
+                                {nav_links.map((item, index)=> (
+                                    <li className="nav_item" key={index}>
+                                    <NavLink to={item.path} className = {(navClass) =>
+                                        navClass.isActive ? 'nav_active' : ''}>
+                                        {item.display}
+                                    </NavLink>
+                                </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="nav_icons">
+                            <span classname='fav_icon'>
+                                <i class="ri-heart-line"></i>
+                                <span className='badge'>1</span>
+                            </span>
+                            <span className='cart_icon'>
+                                <i class="ri-shopping-bag-line"></i>
+                                <span className='badge'>1</span>
+                            </span>
+                            <span> <motion.img whileTap = {{scale: 1.2}} src={userIcon} alt="" /></span>
+                        </div>
+
+                        <div className="mobile_menu">
+                            <span><i class="ri-menu-line"></i></span>
                         </div>
                     </div>
-
-                    <div className='navigation'>
-                        <ul className='menu'>
-                            <li className="nav_item">
-                                <NavLink to='home'>Home</NavLink>
-                            </li>
-                            <li className="nav_item">
-                                <NavLink to='shop'>Shop</NavLink>
-                            </li>
-                            <li className="nav_item">
-                                <NavLink to='cart'>Cart</NavLink>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="nav_icons">
-                        <span classname='fav_icon'>
-                            <i class="ri-heart-line"></i>
-                        </span>
-                        <span className='cart_icon'>
-                            <i class="ri-shopping-bag-line"></i>
-                        </span>
-                        <span> <img src={userIcon} alt="" /></span>
-                    </div>
-
-                    <div className="mobile_menu">
-                        <span><i class="ri-menu-line"></i></span>
-                    </div>
-                </div>
-            </Row>
-        </Container>
+                </Row>
+            </Container>
+       
 
     </header>
 };
