@@ -12,20 +12,20 @@ const Footer = () => {
         <section className="footer">
             
                 <Row>
-                    <Col lg='4'>
+                    <Col lg='4' className='mb-4 text-left' md='5'>
                         <div className="logo">
                             <div>
-                                <h1 className='text-white mb-3'>Multimart</h1>
+                                <h1 className='text-white'>Multimart</h1>
                             </div>
                         </div>
-                        <p className="footer_text">
+                        <p className="footer_text mt-4">
                                 Lorem ipsum, dolor sit amet 
                                 consectetur adipisicing elit. Obcaecati facilis beatae ratione, 
                                 quia quae, consectetur vitae sed sapiente, ut eveniet assumenda aperiam 
                                 laborum omnis animi fugiat. Ut facilis labore optio.
                         </p>
                     </Col>
-                    <Col lg='3'>
+                    <Col lg='3' className='mb-4' md='3'>
                         <div className="footer_quick-links">
                             <h4 className="quick_links-title">Top Categories</h4>
                             <ListGroup >
@@ -47,7 +47,7 @@ const Footer = () => {
                             </ListGroup>
                         </div>
                     </Col>
-                    <Col lg='2'>
+                    <Col lg='2' className='mb-4' md='3'>
                         <div className="footer_quick-links">
                                 <h4 className="quick_links-title">Useful Links</h4>
                                 <ListGroup >
@@ -69,7 +69,7 @@ const Footer = () => {
                                 </ListGroup>
                         </div>
                     </Col>
-                    <Col lg='3'>
+                    <Col lg='3' md='2'>
                         <div className="footer_quick-links">
                                 <h4 className="quick_links-title">Contact</h4>
                                 <ListGroup className='footer_contact' >

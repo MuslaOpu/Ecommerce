@@ -1,6 +1,8 @@
 
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+
+import '../../styles/clock.css';
 
 const Clock = () => {
     const [days, setDays] = useState()
@@ -40,7 +42,7 @@ const Clock = () => {
         countDown()
     })
 
-  return <div className="clock_wrapper d-flex align-items-center gap-5" >
+  return <div className="clock_wrapper d-flex align-items-center gap-3" >
     <div className="clock_data d-flex align-items-center gap-3">
         <div className='text-center'>
             <h1 className='text-white fs-3 mb-2'>{days}</h1>
