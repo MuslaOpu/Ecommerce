@@ -12,7 +12,7 @@ const Footer = () => {
         <section className="footer">
             
                 <Row>
-                    <Col lg='4' className='mb-4 text-left' md='5'>
+                    <Col lg='4' className='mb-4' md='5'>
                         <div className="logo">
                             <div>
                                 <h1 className='text-white'>Multimart</h1>
