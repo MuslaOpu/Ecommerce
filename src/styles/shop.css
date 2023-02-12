@@ -14,7 +14,8 @@
 }
 
 .filter_widget select option{
-    font-size: 0.9rem;;
+    font-size: 2rem;
+    background: var(--primary-color);
 }
 
 .search_box{
@@ -38,4 +39,15 @@
 
 .search_box span {
     color: var(--primary-color);         
+}
+
+@media only screen and (max-width: 768px) {
+    .filter_widget {
+        margin-bottom: 30px;
+    }
+
+    .filter_widget select {
+        padding: 7px 20px;
+        font-size: 0.9rem;
+    }
 }

@@ -2,7 +2,7 @@
 import React , { useRef, useEffect }from 'react';
 
 import './Header.css'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import {motion} from 'framer-motion';
 
 import logo from '../../assets/images/eco-logo.png'
@@ -36,6 +36,7 @@ const Header = () => {
 
 
     const menuRef = useRef(null);
+    const navigate = useNavigate();
 
 
     const stickyHeaderFunc = () => {
@@ -55,7 +56,11 @@ const Header = () => {
         return () => window.removeEventListener("scroll", stickyHeaderFunc);
     });
 
-    const menuToggle = () => menuRef.current.classList.toggle('active_menu')
+    const menuToggle = () => menuRef.current.classList.toggle('active_menu');
+
+    const navigateToCart =() => {
+        navigate('/cart');
+    }
 
     return <header className='header' ref={headerRef}>
       
@@ -88,7 +93,7 @@ const Header = () => {
                                 <i class="ri-heart-line"></i>
                                 <span className='badge'>1</span>
                             </span>
-                            <span className='cart_icon'>
+                            <span className='cart_icon' onClick = {navigateToCart}>
                                 <i class="ri-shopping-bag-line"></i>
                                 <span className='badge'>{totalQuantity}</span>
                             </span>
