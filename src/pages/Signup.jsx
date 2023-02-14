@@ -4,6 +4,7 @@
 
 import React, {useState} from 'react';
 import Helmet from '../components/Helmet/Helmet';
+import CommonSection from '../components/UI/CommonSection';
 import { Container, Row, Col, Form, FormGroup } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -69,7 +70,8 @@ const Signup = () => {
                         });
                 });
 
-                
+                setLoading(false)
+                toast.success('Account created successfully')
                 console.log(user);
         }catch(error) {
             toast.error('something went wrong');
@@ -78,7 +80,8 @@ const Signup = () => {
 
 
 
-    return <Helmet>
+    return <Helmet title = 'Signup'>
+            <CommonSection title='Siginup'/>
         <section>
             <Container>
                 <Row>
