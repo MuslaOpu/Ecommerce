@@ -81,7 +81,7 @@ const Signup = () => {
 
 
     return <Helmet title = 'Signup'>
-            <CommonSection title='Siginup'/>
+            <CommonSection title='Signup'/>
         <section>
             <Container>
                 <Row>
