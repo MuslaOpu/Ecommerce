@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDMw6g9wcrQegySdIFH4bHrASjRfjoZMDw",
-  authDomain: "maltimart-5fd78.firebaseapp.com",
-  projectId: "maltimart-5fd78",
-  storageBucket: "maltimart-5fd78.appspot.com",
-  messagingSenderId: "228668899530",
-  appId: "1:228668899530:web:35c60785cb821e4a6ab433"
+  apiKey: "AIzaSyD8H-JiHpp5ZNN77Z-1of1NgiMB-0Nkc_E",
+  authDomain: "maltimart-f8653.firebaseapp.com",
+  projectId: "maltimart-f8653",
+  storageBucket: "maltimart-f8653.appspot.com",
+  messagingSenderId: "149994552377",
+  appId: "1:149994552377:web:c2b0b0e6d6c2a71b73e1e8"
 };
 
 const app = initializeApp(firebaseConfig);

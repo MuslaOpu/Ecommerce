@@ -113,19 +113,24 @@ const Header = () => {
                                 <i class="ri-shopping-bag-line"></i>
                                 <span className='badge'>{totalQuantity}</span>
                             </span>
-                            <div className='profile'>
+                            <div className='profile' >
                                 <motion.img whiletap = {{scale: 1.2}} 
-                                    onClick={toggleProfileActions}
                                     src={currentUser? currentUser.photoURL : userIcon} 
+                                    onClick={toggleProfileActions}
                                     alt="" 
                                 />
-                                <div className='profile_actions'>
+                                <div className='profile_actions' 
+                                ref={profileActionRef} 
+                                onClick={toggleProfileActions}
+                              
+                                >
                                     {currentUser ? (
                                         <span onClick={logout}>Logout</span>) : ( 
                                         <div className='d-flex align-items-center
                                         justify-content-center flex-column'>
                                             <Link to='/signup'>Signup</Link>
-                                            <Link to='/login'>Login</Link>
+                                            <Link to='/login'>Login</Link>                                          
+                                            <Link to='/dashboard'>Dashboard</Link>
                                         </div>)
                                     }
 

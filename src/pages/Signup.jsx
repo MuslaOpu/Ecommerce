@@ -25,11 +25,11 @@ const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [file, setFile] =useState(null);
-    const [loading, setLoading] = useState(false);
+   
 
     const signup = async(e)=> {
         e.preventDefault()
-        setLoading(true)
+       
 
         try {
             const userCredential = await createUserWithEmailAndPassword(
@@ -40,7 +40,7 @@ const Signup = () => {
 
                 const user = userCredential.user;
 
-                const storageRef = ref(storage, `images/$ {username}`);
+                const storageRef = ref(storage, `Images/${Date.now() + file.name}`);
                 const uploadTask = uploadBytesResumable(storageRef, file);
 
                 uploadTask.on((error)=> {
@@ -51,11 +51,11 @@ const Signup = () => {
                     getDownloadURL(uploadTask.snapshot.ref)
                     .then(async(downloadURL) => {
 
-                        // update user profile
-                            await updateProfile(user, {
-                                displayName: username,
-                                photoURL: downloadURL,
-                            });
+                        // // update user profile
+                        //     await updateProfile(user, {
+                        //         displayName: username,
+                        //         photoURL: downloadURL,
+                        //     });
                         
                         // store user data in firestore database
 
@@ -70,7 +70,7 @@ const Signup = () => {
                         });
                 });
 
-                setLoading(false)
+               
                 toast.success('Account created successfully')
                 console.log(user);
         }catch(error) {
